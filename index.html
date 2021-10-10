@@ -1,0 +1,211 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charSet="UTF-8"/>
+    <title>Figma Prototype Export</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/
+       v2.0 | 20110126
+       License: none (public domain)
+    */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* OWN CSS */
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        li:first-child {
+            margin-bottom: 8pt;
+        }
+
+        #helper {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            bottom: 16pt;
+            right: 16pt;
+            padding: 8pt;
+            border-radius: 4pt;
+        }
+
+        #helper svg {
+            margin-right: 4pt;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+
+    <script>
+      const frames = {"2w3":{"id":"2w3","name":"iPhone-11-Pro-Max---1","clickableChildren":{"22w2":{"name":"Frame 1","destination":"7w34","x":144,"y":584,"w":128,"h":51,"rotation":0}}},"7w34":{"id":"7w34","name":"iPhone-11-Pro-Max---2","clickableChildren":{"7w55":{"name":"image 13","destination":"7w81","x":316,"y":59,"w":69,"h":70,"rotation":0},"7w76":{"name":"image 14","destination":"7w111","x":43,"y":204,"w":161,"h":142,"rotation":0},"7w75":{"name":"image 15","destination":"16w13","x":221,"y":204,"w":161,"h":142,"rotation":0},"7w79":{"name":"image 16","destination":"16w95","x":127,"y":371,"w":161,"h":142,"rotation":0}}},"7w81":{"id":"7w81","name":"iPhone-11-Pro-Max---3","clickableChildren":{"7w100":{"name":"image 18","destination":"7w34","x":0,"y":0,"w":29,"h":24,"rotation":0,"parent":"7w81"},"7w103":{"name":"image 19","destination":"7w34","x":0,"y":0,"w":86,"h":41,"rotation":0,"parent":"7w81"},"7w106":{"name":"image 20","destination":"2w3","x":0,"y":0,"w":99,"h":41,"rotation":0,"parent":"7w81"}}},"7w111":{"id":"7w111","name":"iPhone-11-Pro-Max---4","clickableChildren":{"7w131":{"name":"image 22","destination":"7w34","x":30,"y":93,"w":29,"h":24,"rotation":0},"7w142":{"name":"image 23","destination":"7w146","x":43,"y":202,"w":161,"h":142,"rotation":0},"7w143":{"name":"image 24","destination":"7w167","x":219,"y":202,"w":161,"h":142,"rotation":0},"7w144":{"name":"image 25","destination":"7w182","x":45,"y":367,"w":161,"h":142,"rotation":0},"7w145":{"name":"image 26","destination":"7w193","x":219,"y":367,"w":161,"h":142,"rotation":0}}},"7w146":{"id":"7w146","name":"iPhone-11-Pro-Max---5","clickableChildren":{"7w177":{"name":"Frame 1","destination":"7w111","x":143,"y":684,"w":128,"h":51,"rotation":0},"22w7":{"name":"image 22","destination":"7w111","x":49,"y":85,"w":29,"h":24,"rotation":0}}},"7w167":{"id":"7w167","name":"iPhone-11-Pro-Max---6","clickableChildren":{"7w178":{"name":"Frame 1","destination":"7w111","x":143,"y":686,"w":128,"h":51,"rotation":0},"22w8":{"name":"image 28","destination":"7w111","x":43,"y":83,"w":29,"h":24,"rotation":0}}},"7w182":{"id":"7w182","name":"iPhone-11-Pro-Max---7","clickableChildren":{"7w184":{"name":"Frame 1","destination":"7w111","x":143,"y":686,"w":128,"h":51,"rotation":0},"22w9":{"name":"image 28","destination":"7w111","x":44,"y":83,"w":29,"h":24,"rotation":0}}},"7w193":{"id":"7w193","name":"iPhone-11-Pro-Max---8","clickableChildren":{"22w10":{"name":"image 28","destination":"7w111","x":46,"y":86,"w":29,"h":24,"rotation":0}}},"16w13":{"id":"16w13","name":"iPhone-11-Pro-Max---9","clickableChildren":{"16w20":{"name":"image 22","destination":"7w34","x":30,"y":93,"w":29,"h":24,"rotation":0},"16w79":{"name":"image 35","destination":"16w39","x":37,"y":231,"w":161,"h":142,"rotation":0},"16w80":{"name":"image 36","destination":"16w49","x":220,"y":231,"w":161,"h":142,"rotation":0},"16w81":{"name":"image 37","destination":"16w61","x":37,"y":389,"w":161,"h":142,"rotation":0},"16w82":{"name":"image 38","destination":"16w74","x":220,"y":389,"w":161,"h":142,"rotation":0}}},"16w39":{"id":"16w39","name":"iPhone-11-Pro-Max---10","clickableChildren":{"16w41":{"name":"Frame 1","destination":"16w13","x":143,"y":586,"w":128,"h":51,"rotation":0},"22w11":{"name":"image 22","destination":"16w13","x":36,"y":89,"w":29,"h":24,"rotation":0}}},"16w49":{"id":"16w49","name":"iPhone-11-Pro-Max---11","clickableChildren":{"16w60":{"name":"image 41","destination":"16w13","x":145,"y":578,"w":123,"h":50,"rotation":0},"22w12":{"name":"image 40","destination":"16w13","x":33,"y":91,"w":29,"h":24,"rotation":0}}},"16w61":{"id":"16w61","name":"iPhone-11-Pro-Max---12","clickableChildren":{"16w71":{"name":"image 43","destination":"16w13","x":155,"y":578,"w":104,"h":50,"rotation":0},"22w13":{"name":"image 22","destination":"16w13","x":36,"y":90,"w":29,"h":24,"rotation":0}}},"16w74":{"id":"16w74","name":"iPhone-11-Pro-Max---13","clickableChildren":{"22w14":{"name":"image 22","destination":"16w13","x":38,"y":90,"w":29,"h":24,"rotation":0}}},"16w95":{"id":"16w95","name":"iPhone-11-Pro-Max---14","clickableChildren":{"16w101":{"name":"image 22","destination":"7w34","x":30,"y":93,"w":29,"h":24,"rotation":0},"16w117":{"name":"image 46","destination":"16w119","x":40,"y":213,"w":161,"h":142,"rotation":0},"16w118":{"name":"image 47","destination":"16w127","x":222,"y":213,"w":161,"h":142,"rotation":0}}},"16w119":{"id":"16w119","name":"iPhone-11-Pro-Max---15","clickableChildren":{"16w126":{"name":"image 49","destination":"16w95","x":155,"y":618,"w":104,"h":50,"rotation":0},"22w15":{"name":"image 22","destination":"16w95","x":39,"y":91,"w":29,"h":24,"rotation":0}}},"16w127":{"id":"16w127","name":"iPhone-11-Pro-Max---16","clickableChildren":{"16w135":{"name":"image 51","destination":"16w95","x":98,"y":614,"w":104,"h":50,"rotation":0},"16w137":{"name":"image 52","destination":"16w95","x":227,"y":614,"w":104,"h":50,"rotation":0},"22w16":{"name":"image 50","destination":"16w95","x":36,"y":90,"w":29,"h":24,"rotation":0}}}};
+      const startFrameId = {"start":"2w3"};
+      const retina = true;
+      window.onload = function () {
+        // name is wrong, need to add the index!
+        let oneX = "images/" + frames[startFrameId["start"]].id + "-" + frames[startFrameId["start"]].name + ".png";
+        document.getElementById("content").src = oneX;
+        document.getElementById("content").className = frames[startFrameId["start"]].id;
+        if (retina === true) {
+          let twoX = "images/" + frames[startFrameId["start"]].id + "-" + frames[startFrameId["start"]].name + "@2x.png 2x";
+          document.getElementById("content").srcset = oneX + " 1x, " + twoX;
+        }
+        renderClickableAreas();
+      };
+
+      // Hide helper after 5 seconds
+      window.addEventListener("load", function () {
+        document.getElementById("helper").classList.remove("hidden");
+        setTimeout(function () {
+          document.getElementById("helper").className = 'hidden';
+        }, 5000);
+      });
+
+      // listen to keydown events
+      window.addEventListener("keydown", event => {
+        // R to go back to start
+        if (event.isComposing || KeyboardEvent.keyCode === 82) {
+          let oneX = "images/" + frames[startFrameId["start"]].id + "-" + frames[startFrameId["start"]].name + ".png";
+          document.getElementById("content").src = oneX;
+          document.getElementById("content").className = frames[startFrameId["start"]].id;
+          if (retina === true) {
+            let twoX = "images/" + frames[startFrameId["start"]].id + "-" + frames[startFrameId["start"]].name + "@2x.png 2x";
+            document.getElementById("content").srcset = oneX + " 1x, " + twoX;
+          }
+          document.documentElement.scrollTop = 0;
+        }
+        // H to hide the interface
+        if (event.isComposing || KeyboardEvent.keyCode === 72) {
+          if (document.getElementById("helper").className !== 'hidden') {
+            document.getElementById("helper").className = 'hidden';
+          } else {
+            document.getElementById("helper").className = '';
+          }
+        }
+      });
+      
+      function renderClickableAreas() {
+        let clickableDiv = document.getElementById("clickables");
+        if (clickableDiv.children.length > 0) {
+          clickableDiv.innerHTML = '';
+        }
+        
+        let currentFrame = document.getElementById("content").className;
+        for (let i = 0; i < Object.keys(frames[currentFrame].clickableChildren).length; i++) {
+          var newContent = document.createElement('div');
+          let layerName = Object.keys(frames[currentFrame].clickableChildren)[i];
+          let layer = frames[currentFrame].clickableChildren[layerName];
+          
+          if (layer.destination) {
+          newContent.style.position = 'absolute';
+          newContent.className = layerName;
+          newContent.style.width = layer.w + 'px';
+          newContent.style.height = layer.h + 'px';
+          newContent.style.top = layer.y + 'px';
+          newContent.style.left = layer.x + 'px';
+          newContent.style.cursor = 'pointer';
+          if (layer.parent && frames[currentFrame].clickableChildren[layer.parent]) {
+            let combinedY = layer.y + frames[currentFrame].clickableChildren[layer.parent].y; 
+            let combinedX = layer.x + frames[currentFrame].clickableChildren[layer.parent].x; 
+          newContent.style.top = combinedY + 'px';
+          newContent.style.left = combinedX + 'px';     
+          }
+          newContent.setAttribute("onclick", "navigateTo('"+layer.destination+"')");
+          
+          clickableDiv.appendChild(newContent);
+          }
+        }
+      }
+
+    function navigateTo(newFrameId) {
+      let oneX = "images/" + newFrameId + "-" + frames[newFrameId].name + ".png";
+      document.getElementById("content").className = newFrameId;
+      document.getElementById("content").src = oneX;
+      document.documentElement.scrollTop = 0;
+      if (retina === true) {
+        let twoX = "images/" + newFrameId + "-" + frames[newFrameId].name + "@2x.png 2x";
+        document.getElementById("content").srcset = oneX + " 1x, " + twoX;
+      }
+      renderClickableAreas();
+    }
+    </script>
+</head>
+<body>
+<div id="helper" class="hidden">
+    <ul>
+        <li>
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.00318 2.52632C8.76035 2.52632 10.1864 3.94105 10.1864 5.68421C10.1864 6.09474 10.1037 6.48 9.95725 6.84L11.8163 8.68421C12.7776 7.88842 13.5352 6.85895 14 5.68421C12.8986 2.91158 10.1801 0.947368 6.99682 0.947368C6.1055 0.947368 5.25239 1.10526 4.46294 1.38947L5.83811 2.75368C6.201 2.60842 6.58936 2.52632 7.00318 2.52632ZM0.636653 0.802105L2.08822 2.24211L2.38108 2.53263C1.32424 3.34737 0.496589 4.43368 0 5.68421C1.10141 8.45684 3.81992 10.4211 7.00318 10.4211C7.99 10.4211 8.93224 10.2316 9.79172 9.89053L10.0591 10.1558L11.9245 12L12.7331 11.1979L1.4452 0L0.636653 0.802105ZM4.15734 4.29474L5.14416 5.27368C5.11232 5.40632 5.09322 5.54526 5.09322 5.68421C5.09322 6.73263 5.94634 7.57895 7.00318 7.57895C7.14325 7.57895 7.28331 7.56 7.41701 7.52842L8.40382 8.50737C7.97726 8.71579 7.50614 8.8421 7.00318 8.8421C5.24602 8.8421 3.81992 7.42737 3.81992 5.68421C3.81992 5.18526 3.94725 4.71789 4.15734 4.29474V4.29474ZM6.90132 3.80211L8.90678 5.79158L8.91951 5.69053C8.91951 4.64211 8.06639 3.79579 7.00955 3.79579L6.90132 3.80211Z"
+                      fill="white"/>
+            </svg>
+            Hide interface (H)
+        </li>
+        <li>
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 5L5 1M1 5L5 9M1 5H12C13.1046 5 14 5.89543 14 7V11" stroke="white" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Restart (R)
+        </li>
+
+    </ul>
+</div>
+<div id="clickables"></div>
+<img id="content" src=""/>
+</body>
+</html>
